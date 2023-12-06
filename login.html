@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #1c1c1c;
+        }
+    </style>
+</head>
+<body>
+    <!--Login html dolgok: -->
+        <input type="text" id="username">
+        <input type="text" id="password">
+        <button type="submit" onclick="login()">Bejelentkezés</button>
+    <script>
+        // ctrl+k, ctrl+c
+        // fetch('http://localhost:3000/asd')
+        // .then(response => response.json())
+        // .then(data => {
+        //     console.log('Test:', data);
+        //     // Perform operations with the fetched data here
+        // })
+        // .catch(error => {
+        //     console.error('Error fetching:', error);
+        // });
+        // // document.getelementbyid-val változókba tedd bele a dolgokat
+        function login(){
+            fetch('http://localhost:3000/login',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username : document.getElementById('username').value,
+                    password : document.getElementById('password').value,
+                })
+            })
+            .then(response => response.json() )
+            .then(data =>{
+                console.log('logged in');
+                console.log(data);
+                console.log('userid:',data['userid'])
+            })
+        }
+    </script>
+</body>
+</html>

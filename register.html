@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #1c1c1c;
+        }
+    </style>
+</head>
+<body>
+        <input type="text" id="username">
+        <input type="text" id="password">
+        <button type="submit" onclick="register()">Regisztráció</button>
+    
+    <script>
+        function register(){
+            fetch('http://localhost:3000/register',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username : document.getElementById('username').value,
+                    password : document.getElementById('password').value,
+                })
+            })
+            .then(response => response.json() )
+            .then(data =>{
+                console.log('regg');
+                console.log(data);
+                console.log('userid:',data['user_id'])
+            })
+        }
+    </script>
+</body>
+</html>

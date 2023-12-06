@@ -1,0 +1,57 @@
+body
+{
+background-color: #4e4c4c;
+color: white;
+font-style: garamond;
+line-height: 25px;
+}
+a{
+    color: rgb(0, 0, 0);
+    font-size: x-large
+    
+}
+
+#cim{
+    color: black;
+    font-size: large;
+}
+
+h1
+{
+text-align: center;
+color: black;
+}
+
+#menusav
+{
+    
+    text-align:center;
+    color: #2E363F;
+}
+#fejleccella
+{
+    background-color:white;
+    text-align:center;
+    color:#2E363F;
+}
+#forras
+{
+    font-style:italic;
+    text-align:center;
+}
+img
+{
+width: 400px;
+float: right;
+top
+}
+
+table
+{
+width: 80%;
+text-align: center;
+padding: 10px;
+margin: auto;
+text-align: justify;
+}
+
